@@ -1,0 +1,12 @@
+package com.vn.msp.repository;
+
+import com.vn.msp.model.ExchangeValue;
+
+public class ExchangeValueRepository {
+
+	public ExchangeValue findByFromAndTo(String from, String to) {
+		
+		return null;
+	}
+
+}

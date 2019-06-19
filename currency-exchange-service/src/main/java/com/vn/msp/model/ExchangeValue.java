@@ -2,20 +2,16 @@ package com.vn.msp.model;
 
 import java.math.BigDecimal;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import org.springframework.data.annotation.Id;
 
-@Entity
+
 public class ExchangeValue {
 
 	@Id
-	private Long id;
+	private String id;
 	
-	@Column(name="currency_from")
 	private String from;
 	
-	@Column(name="currency_to")
 	private String to;
 	
 	private BigDecimal conversionMultiple;
@@ -26,7 +22,7 @@ public class ExchangeValue {
 		super();
 	}
 
-	public ExchangeValue(Long id, String from, String to, BigDecimal conversionMultiple) {
+	public ExchangeValue(String id, String from, String to, BigDecimal conversionMultiple) {
 		super();
 		this.id = id;
 		this.from = from;
@@ -34,11 +30,11 @@ public class ExchangeValue {
 		this.conversionMultiple = conversionMultiple;
 	}
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

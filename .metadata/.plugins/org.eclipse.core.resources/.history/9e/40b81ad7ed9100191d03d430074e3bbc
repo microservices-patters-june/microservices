@@ -1,0 +1,17 @@
+package com.vn.msp.repository;
+
+import java.math.BigDecimal;
+
+import org.springframework.stereotype.Repository;
+
+import com.vn.msp.model.ExchangeValue;
+
+@Repository
+public class ExchangeValueRepository {
+
+	public ExchangeValue findByFromAndTo(String from, String to) {
+		
+		return new ExchangeValue(1l, "hola", "adeu", BigDecimal.ONE);
+	}
+
+}

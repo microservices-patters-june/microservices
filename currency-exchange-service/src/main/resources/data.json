@@ -1,0 +1,17 @@
+[ 
+{ "_class" : "com.vn.msp.model.ExchangeValue",
+ "from" : "USD",
+  "to" : "INR",
+  "conversionMultiple": 65,
+  "port": 0 },
+  { "_class" : "com.vn.msp.model.ExchangeValue",
+ "from" : "EUR",
+  "to" : "INR",
+  "conversionMultiple": 75,
+  "port": 0 },
+  { "_class" : "com.vn.msp.model.ExchangeValue",
+ "from" : "AUD",
+  "to" : "INR",
+  "conversionMultiple": 25,
+  "port": 0 }
+] 
