@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.vn.msp.model.LimitConfiguration;
 import com.vn.msp.service.Configuration;
+import com.vn.msp.service.RabbitMQSender;
 
 @RestController
 public class LimitsConfigurationController {
@@ -14,9 +15,17 @@ public class LimitsConfigurationController {
 	@Autowired
 	private Configuration configuration;
 	
+	@Autowired
+    private RabbitMQSender sender;
+
+	
 	@GetMapping("/limits")
 	public LimitConfiguration retrieveLimitsFromConfigurations() {
-		return new LimitConfiguration(configuration.getMaximum(), configuration.getMinimum());
+		LimitConfiguration limits =  new LimitConfiguration(configuration.getMaximum(), configuration.getMinimum());
+		
+		sender.send(limits);
+		
+		return limits;		
 	}
 	
 	@GetMapping("/fault-tolerance-example")
