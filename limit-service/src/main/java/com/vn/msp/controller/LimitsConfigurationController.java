@@ -23,7 +23,7 @@ public class LimitsConfigurationController {
 	public LimitConfiguration retrieveLimitsFromConfigurations() {
 		LimitConfiguration limits =  new LimitConfiguration(configuration.getMaximum(), configuration.getMinimum());
 		
-		sender.send(limits);
+		//sender.send(limits);
 		
 		return limits;		
 	}
